@@ -1,10 +1,10 @@
 const express = require("express");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
-  res.send("Welcome to My Page");
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 
 app.get("/family", (req, res) => {
